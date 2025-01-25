@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Page</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
 
+  <h2>Available Numbers</h2> 
+  <div id="available-numbers">
+    <!-- Display available numbers here -->
+  </div>
+  
+  <!-- Contact Section -->
+      <footer>
+        <button id="contact-button">Support-Team</button>
+  
+  
+
+  <script>
+    // Example: Displaying available numbers
+    const availableNumbers = ["1112223333", "4445556666", "7778889999"];
+    const availableNumbersContainer = document.getElementById('available-numbers');
+
+    availableNumbers.forEach((number) => {
+      const numberItem = document.createElement('p');
+      numberItem.textContent = `Available Number: ${number}`;
+      availableNumbersContainer.appendChild(numberItem);
+    });
+
+    // Contact button logic
+    document.getElementById('contact-button').addEventListener('click', () => {
+      window.open('contact.html', '_blank');
+    });
+  </script>
+</body>
+</html>
