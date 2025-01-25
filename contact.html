@@ -1,1 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Admin</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
 
+  <h2>Contact Admin</h2>
+  <div id="chat-container">
+    <textarea id="message-input" placeholder="Type your message here..."></textarea>
+    <button id="send-message-button">Send Message</button>
+  </div>
+
+  <script>
+    document.getElementById('send-message-button').addEventListener('click', () => {
+      const message = document.getElementById('message-input').value;
+      if (message) {
+        alert('Message send to TOPNUMSTORE CUSTOMER-SUPPORT-TEAM: ' + message);
+      } else {
+        alert('Please type a message before sending.');
+      }
+    });
+  </script>
+</body>
+</html>
