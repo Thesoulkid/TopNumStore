@@ -1,41 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script>
-  // Define the domains to bypass
-  const bypassedDomains = ["topnumstore.com"];
-
-  // Check the current domain
-  if (bypassedDomains.includes(window.location.hostname)) {
-    // Redirect to your desired website
-    window.location.href = "https://topnumstore.vercel.app/";
-  }
-</script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Hacking</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>PREDICTION HACKING</h1>
+        </div>
 
-  <!-- Login Page -->
-  <div id="login-container">
-    <h2>Login</h2>
-    <form id="login-form">
-      <div class="input-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" placeholder="Enter your username" required>
-      </div>
-      <div class="input-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter your password" required>
-      </div>
-      <button type="submit">Login</button>
-      <p id="login-error" class="error" style="display: none;">Invalid username or password!</p>
-    </form>
-  </div>
+        <!-- Input Box -->
+        <div class="input-section">
+            <label for="last-period">Enter Last Period Number:</label>
+            <input type="number" id="last-period" placeholder="Enter last period number">
+        </div>
 
-  <script src="main.js"></script>
+        <!-- Buttons -->
+        <div class="button-section">
+            <button id="start-btn">Start</button>
+            <button id="stop-btn">Stop</button>
+        </div>
+
+        <!-- Output -->
+        <div class="prediction-box">
+            <p class="output-text">Prediction: <span id="prediction">Waiting...</span></p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <button id="submit-btn">Submit</button>
+            <p class="footer-text">by SoulzinMaker</p>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
 </body>
 </html>
-
