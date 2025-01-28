@@ -1,7 +1,8 @@
 let interval; // To store the interval
-let countdownInterval; // For the timer
+let timerInterval; // To store the timer interval
 let lastPeriod = null; // To store the last period number
-const historyList = document.getElementById("history-list");
+let countdown = 30; // Initial countdown value
+const history = []; // To store the last 5 predictions
 
 // Start Button Functionality
 document.getElementById("start-btn").addEventListener("click", () => {
@@ -16,56 +17,46 @@ document.getElementById("start-btn").addEventListener("click", () => {
         return;
     }
 
-    // Reset history and start the timer
-    historyList.innerHTML = ""; // Clear history
-    startCountdown(timerElement, 30); // Start the timer countdown
+    // Reset the countdown timer
+    resetCountdown();
 
     // Start prediction calculation every 30 seconds
     clearInterval(interval);
+    clearInterval(timerInterval);
+
     interval = setInterval(() => {
         const result = calculatePrediction(lastPeriod);
+        updateHistory(result.prediction, lastPeriod);
         predictionElement.textContent = result.prediction;
         lastPeriod = result.nextPeriod; // Update the last period
-
-        // Add prediction to history
-        updateHistory(result.prediction, lastPeriod);
-
-        // Restart timer
-        startCountdown(timerElement, 30);
+        resetCountdown(); // Restart the countdown
     }, 30000);
+
+    timerInterval = setInterval(() => {
+        countdown--;
+        timerElement.textContent = countdown;
+        if (countdown <= 0) countdown = 30; // Reset countdown when it reaches 0
+    }, 1000);
 
     // Show the first prediction immediately
     const result = calculatePrediction(lastPeriod);
+    updateHistory(result.prediction, lastPeriod);
     predictionElement.textContent = result.prediction;
     lastPeriod = result.nextPeriod;
-    updateHistory(result.prediction, lastPeriod);
 });
 
 // Stop Button Functionality
 document.getElementById("stop-btn").addEventListener("click", () => {
     clearInterval(interval);
-    clearInterval(countdownInterval);
+    clearInterval(timerInterval);
     document.getElementById("prediction").textContent = "Stopped";
-    document.getElementById("timer").textContent = "--";
+    document.getElementById("timer").textContent = "30";
 });
 
 // Submit Button Functionality
 document.getElementById("submit-btn").addEventListener("click", () => {
     alert("Prediction submitted successfully!");
 });
-
-// Timer Countdown
-function startCountdown(timerElement, seconds) {
-    clearInterval(countdownInterval);
-    timerElement.textContent = seconds;
-    countdownInterval = setInterval(() => {
-        seconds -= 1;
-        timerElement.textContent = seconds;
-        if (seconds <= 0) {
-            clearInterval(countdownInterval);
-        }
-    }, 1000);
-}
 
 // Prediction Calculation Logic
 function calculatePrediction(lastPeriodNumber) {
@@ -88,13 +79,27 @@ function calculatePrediction(lastPeriodNumber) {
     };
 }
 
-// Update History
-function updateHistory(prediction, period) {
-    const historyItems = historyList.querySelectorAll("li");
-    if (historyItems.length >= 5) {
-        historyItems[0].remove(); // Remove the oldest item if there are 5 already
-    }
-    const listItem = document.createElement("li");
-    listItem.textContent = `Period ${period}: ${prediction}`;
-    historyList.appendChild(listItem);
+// Update History Box
+function updateHistory(prediction, periodNumber) {
+    const historyList = document.getElementById("history-list");
+
+    // Add the new prediction to the history array
+    history.unshift(`Period ${periodNumber}: ${prediction}`);
+
+    // Limit to the last 5 predictions
+    if (history.length > 5) history.pop();
+
+    // Clear and update the history list
+    historyList.innerHTML = "";
+    history.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        historyList.appendChild(li);
+    });
+}
+
+// Reset Countdown Timer
+function resetCountdown() {
+    countdown = 30;
+    document.getElementById("timer").textContent = countdown;
 }
