@@ -1,3 +1,43 @@
+/* Timer Styles */
+.timer-section {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.timer-text {
+    font-size: 1.2rem;
+    color: lime;
+    text-shadow: 0 0 5px green;
+}
+
+/* History Box */
+.history-box {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid green;
+    border-radius: 5px;
+    background: black;
+    box-shadow: 0 0 10px green;
+}
+
+.history-box h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: lime;
+}
+
+.history-box ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.history-box li {
+    color: lightgreen;
+    text-shadow: 0 0 5px green;
+}
+
 /* General Styles */
 body {
     background-color: black;
