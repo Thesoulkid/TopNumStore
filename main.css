@@ -1,7 +1,7 @@
 /* General Styles */
 body {
-    background-color: black;
-    color: green;
+    background-color: #000;
+    color: #008000;
     font-family: "Courier New", Courier, monospace;
     display: flex;
     flex-direction: column;
@@ -14,24 +14,24 @@ body {
 h1 {
     text-align: center;
     font-size: 2.5rem;
-    text-shadow: 0 0 10px green, 0 0 20px lime;
+    text-shadow: 0 0 10px #008000, 0 0 20px #00ff00;
 }
 
 .container {
     width: 90%;
     max-width: 600px;
-    border: 2px solid green;
+    border: 2px solid #008000;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 15px green;
+    box-shadow: 0 0 15px #008000;
 }
 
-.input-section,
-.timer-section,
-.button-section,
-.prediction-box,
-.history-box,
-.footer {
+.\69\6E\70\75\74\2D\73\65\63\74\69\6F\6E,
+.\74\69\6D\65\72\2D\73\65\63\74\69\6F\6E,
+.\62\75\74\74\6F\6E\2D\73\65\63\74\69\6F\6E,
+.\70\72\65\64\69\63\74\69\6F\6E\2D\62\6F\78,
+.\68\69\73\74\6F\72\79\2D\62\6F\78,
+.\66\6F\6F\74\65\72 {
     margin: 20px 0;
     text-align: center;
 }
@@ -40,10 +40,10 @@ label {
     font-size: 1.2rem;
 }
 
-input[type="number"] {
+input[\74\79\70\65\3D\22\6E\75\6D\62\65\72\22] {
     padding: 10px;
     font-size: 1rem;
-    color: black;
+    color: #000;
     width: 60%;
     border-radius: 5px;
     border: none;
@@ -52,9 +52,9 @@ input[type="number"] {
 }
 
 button {
-    background-color: black;
-    color: green;
-    border: 1px solid green;
+    background-color: #000;
+    color: #008000;
+    border: 1px solid #008000;
     padding: 10px 20px;
     margin: 5px;
     cursor: pointer;
@@ -64,58 +64,58 @@ button {
 }
 
 button:hover {
-    background-color: green;
-    color: black;
-    box-shadow: 0 0 10px lime;
+    background-color: #008000;
+    color: #000;
+    box-shadow: 0 0 10px #00ff00;
 }
 
-.output-text {
+.\6F\75\74\70\75\74\2D\74\65\78\74 {
     font-size: 1.5rem;
     font-weight: bold;
 }
 
 /* Timer Styles */
-.timer-section {
+.\74\69\6D\65\72\2D\73\65\63\74\69\6F\6E {
     margin: 20px 0;
     text-align: center;
 }
 
-.timer-text {
+.\74\69\6D\65\72\2D\74\65\78\74 {
     font-size: 1.2rem;
-    color: lime;
-    text-shadow: 0 0 5px green;
+    color: #00ff00;
+    text-shadow: 0 0 5px #008000;
 }
 
 /* History Box */
-.history-box {
+.\68\69\73\74\6F\72\79\2D\62\6F\78 {
     margin-top: 20px;
     padding: 10px;
-    border: 1px solid green;
+    border: 1px solid #008000;
     border-radius: 5px;
-    background: black;
-    box-shadow: 0 0 10px green;
+    background: #000;
+    box-shadow: 0 0 10px #008000;
 }
 
-.history-box h3 {
+.\68\69\73\74\6F\72\79\2D\62\6F\78 h3 {
     margin: 0;
     font-size: 1.2rem;
-    color: lime;
+    color: #00ff00;
 }
 
-.history-box ul {
+.\68\69\73\74\6F\72\79\2D\62\6F\78 ul {
     list-style-type: none;
     padding: 0;
     margin: 10px 0;
     font-size: 1rem;
 }
 
-.history-box li {
-    color: lightgreen;
-    text-shadow: 0 0 5px green;
+.\68\69\73\74\6F\72\79\2D\62\6F\78 li {
+    color: #90ee90;
+    text-shadow: 0 0 5px #008000;
 }
 
 /* Footer */
-.footer-text {
+.\66\6F\6F\74\65\72\2D\74\65\78\74 {
     font-size: 0.8rem;
     opacity: 0.8;
 }
