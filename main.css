@@ -1,3 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400&display=swap");
+ 
+body {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  background: #000000;
+  justify-content: center;
+}
+
+.product-card {
+  width: 350px;
+  height: 500px;
+  min-width: 320px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  font-family: "Baloo Bhai 2";
+  background: linear-gradient(rgb(33, 33, 33), rgb(17, 17, 17) 50%);
+}
+
+.img {
+  width: 100%;
+  height: 50%;
+  z-index: 1;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.img::before {
+  content: '';
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(35px);
+  background: rgb(142, 227, 251);
+}
+
+img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.price {
+  position: absolute;
+  right: 0px;
+  top: 0;
+  background: linear-gradient(rgb(75 165 200), #18355e);
+  padding: 2px 15px;
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+  letter-spacing: .8px;
+  border-radius: 0 0 0px 10px;
+}
+
+.details {
+  width: 100%;
+  height: 50%;
+  padding: 15px;
+  color: white;
+  gap: 15px;
+  display: grid;
+  align-content: center;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: flex-start;
+  grid-template-columns: 50% auto 1fr;
+  background: linear-gradient(rgb(49, 49, 49), rgb(7, 7, 7));
+  grid-template-areas: "name separator spec1" "desc separator spec2" "rating separator spec3" "btn btn btn";
+}
+
+.description {
+  grid-area: desc;
+  font-size: 11px;
+  line-height: 1.3;
+  color: rgb(159, 159, 159);
+}
+
+.ratings {
+  grid-area: rating;
+}
+
+.star-4-5 {
+  height: 15px;
+  align-self: flex-start;
+  background: url(https://i.ibb.co/tCG1Nxx/stars.png) left /contain no-repeat;
+}
+
+.separator {
+  height: 100%;
+  width: 1px;
+  grid-area: separator;
+  background: rgb(75, 173, 211);
+}
+
+.specs {
+  font-size: 10px;
+  line-height: 1.2;
+  color: #a3a3a3;
+}
+
+.specs h3 {
+  letter-spacing: .8px;
+  margin-bottom: 5px;
+  color: rgb(122, 207, 240);
+}
+
+.buy-btn {
+  grid-area: btn;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 2.5;
+  cursor: pointer;
+  border-radius: 10px;
+  letter-spacing: .5px;
+  font-family: "Baloo Bhai 2";
+  background: linear-gradient(rgb(75 165 200), #18355e);
+}
+
 /* General Styles */
 body {
     background-color: #000;
